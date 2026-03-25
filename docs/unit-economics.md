@@ -2,6 +2,32 @@
 
 ## Estimated Unit Cost (Single Unit)
 
+### Revised BOM with Specific Parts (March 2025)
+
+| Component | Specific Part | Cost |
+|-----------|--------------|------|
+| 4 PPLN waveguide channels | HC Photonics custom multi-period chip | $3,000-8,000 |
+| Alt: Bulk PPLN multi-grating | Covesion MSFG976-0.5 (x2) | $2,000-5,000 |
+| Pump laser (1064nm CW) | Thorlabs DJ1064 (70mW DBR, fiber-coupled) | $1,500-2,500 |
+| Alt: Higher power pump | CNI MGL-FN-1064 (500mW) | $800-1,500 |
+| 4 silicon photodiodes | Hamamatsu S1227-1010BQ (x4) | $80-200 |
+| Alt: Amplified detectors | Thorlabs PDA100A2 (x4) | $1,600-2,000 |
+| Alt: Si SPADs (max sensitivity) | Excelitas SPCM / Hamamatsu S14160 | $2,000-5,000 |
+| Bandpass filters (x4) | Thorlabs FB-series (10nm BW) | $320-480 |
+| PPLN temperature oven | Covesion PV40 + mount | $800-1,200 |
+| Mid-IR source | Micro-Hybrid JSIR350 MEMS emitter | $50-100 |
+| CaF2 optics (lens + windows) | Thorlabs LA5370, LA5714, WG50530 | $300-500 |
+| Dichroic combiner | Thorlabs DMSP1000 | $200-400 |
+| Housing and electronics | Custom enclosure + MCU + ADC | $1,000-3,000 |
+| **Total (waveguide, APD)** | | **$8,000-18,000** |
+| **Total (waveguide, SPAD)** | | **$10,000-22,000** |
+
+**Note:** Previous estimates of $16-30K were based on a 1W fiber laser ($5-8K) and individual PPLN crystals. Revised BOM uses a 70mW DBR laser and multi-period chips, dropping the floor significantly. The SPAD option adds cost but enables single-photon detection (ppb sensitivity without multi-pass cells).
+
+See [sfg-energy-monitor/docs/build-plan.md](https://github.com/jackwayne234/sfg-energy-monitor/blob/main/docs/build-plan.md) for full BOM with supplier directory.
+
+### Original BOM (for reference)
+
 | Component | Cost |
 |-----------|------|
 | 4 PPLN crystals | $6,000-12,000 |
@@ -53,7 +79,12 @@
 At 100+ units:
 - PPLN crystals: bulk pricing from HC Photonics/Covesion reduces per-crystal cost ~30-50%
 - Pump lasers: volume discount from Thorlabs or IPG ~20-30%
-- Estimated unit cost at volume: $10,000-18,000
+- Silicon detectors: commodity pricing at volume (<$10/unit for photodiodes)
+- Estimated unit cost at volume: **$5,000-12,000** (revised from $10-18K)
+
+### Competitive Note
+
+The NUTMEG project (Covesion + QLM Technology, Innovate UK funded, started Aug 2024) is building a briefcase-sized portable sensor for CO2, CH4, NOx, and NH3 using the same PPLN waveguide upconversion architecture. Expected commercial availability ~2026. This validates market demand but also signals incoming competition from a PPLN manufacturer with vertical integration.
 
 ## Revenue Model Options
 
